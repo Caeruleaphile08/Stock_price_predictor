@@ -1,0 +1,96 @@
+*{
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.log_det h1{
+     padding-bottom: 40px; 
+     
+    
+}
+
+.icon{
+    padding:10px;
+    font-size: 30px;
+    flex-direction:column ;
+}
+.log_det input {
+    border-radius: 9px;
+    border-width: 3px;
+    border-color: rgb(50, 40, 43); 
+    height: 45px;
+    width:280px;
+    margin-top: 15px;
+    
+    
+    
+}
+.log_det a{
+    padding-top: 20px;
+}
+
+.log_form{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    width: 100vw;
+    height:100vh;
+    background-image: url('https://assets.entrepreneur.com/content/3x2/2000/1678891229-shutterstock-2136269523.jpg');
+    /* background-color: rgb(135, 130, 124); */
+    border-radius: 10px;
+    
+}
+
+
+.log_det{
+    display: flex;
+    padding-top: 26px;
+    flex-direction: column;
+    margin-left:300px;
+    margin-right: 450px;
+    width:38%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    flex:1;
+    height: 70%;
+    border-radius: 20px;
+    background: linear-gradient(to right,#ffffff,#999998);
+    box-shadow: #383c3a;
+    background-color: rgba(255, 255, 255, 0.2); /* 50% transparency */
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(153, 153, 152, 0.5)); /* Gradient with transparency */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+    margin-top: 40px;
+    
+}
+.log_det button{
+    margin-top: 20px;
+    border-radius: 14px;
+    height:45px;
+    width:100px;
+    background: #2d5eda;
+    border-width:3px;
+    color: aliceblue;
+    font-weight: bolder;
+    
+}
+.log_det button:hover{
+    background-color:rgb(23, 84, 158);
+    
+    color: azure;
+}
+
+
+.log_det h5{
+    padding-top:10px;
+    padding-bottom: 10px;
+}
+/* Medium screens (tablets, 768px and up) */

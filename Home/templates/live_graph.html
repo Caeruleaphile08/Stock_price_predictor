@@ -1,0 +1,265 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Graph </title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <style>
+        .search-input {
+            background-repeat: no-repeat;
+            background-position: 10px center;
+            padding-left: 40px; /* Adjust as needed */
+        }
+
+        .hero-section {
+            height: 500px; /* Adjust the height as needed */
+        }
+
+        .green {
+            color: green;
+        }
+
+        .card {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow */
+            border-radius: 10px; /* Border radius */
+            border-width: 2px; /* Border width */
+            border-style: solid; /* Border style */
+            border-color: #dee2e6;
+        }
+
+        .stock-details-section {
+            padding-top: 80px;
+        }
+
+        .tradingview-widget-container {
+            height: 450px;
+            width: 1100px;
+        }
+
+        .button:hover {
+            color: rgb(92, 92, 255);
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        #main {
+            transition: margin-right .5s;
+            padding: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <!-- Your existing navbar code here -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5 ">
+        <img src="{% static 'images/logo1.jpg' %}" alt="Logo" style="width: 70px; height: 70px; margin-right: -5px;">
+        <span class="text-success  font-weight-bold ml-2" style="font-size: 24px;">Sto</span><span class="text-danger  font-weight-bold" style="font-size: 24px;">XX</span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item mr-3">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="main">
+        <!-- Hero Section -->
+        <section class="hero-section bg-light mb-3">
+            <div class="container">
+                <h1>Live Graph </h1>
+                <!-- TradingView Widget BEGIN -->
+                <div class="tradingview-widget-container">
+                    <div class="tradingview-widget-container__widget"></div>
+                    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+                    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+                        {
+                            "width": "980",
+                            "height": "610",
+                            "symbol": "NASDAQ:AAPL",
+                            "interval": "D",
+                            "timezone": "Etc/UTC",
+                            "theme": "dark",
+                            "style": "2",
+                            "locale": "en",
+                            "enable_publishing": false,
+                            "hide_top_toolbar": true,
+                            "hide_legend": true,
+                            "save_image": false,
+                            "calendar": false,
+                            "hide_volume": true,
+                        }
+                    </script>
+                </div>
+                <!-- TradingView Widget END -->
+            </div>
+        </section>
+         <!-- Stock Details Section -->
+         <section class="stock-details-section">
+            <h3 class="text-center mb-5">Stock Details</h3>
+            <div class="container d-flex justify-content-center">
+                <div class="tradingview-widget-container">
+                    <div class="tradingview-widget-container__widget"></div>
+                    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+                    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-financials.js" async>
+                        {
+                            "isTransparent": false,
+                            "largeChartUrl": "",
+                            "displayMode": "regular",
+                            "width": 400,
+                            "height": 550,
+                            "colorTheme": "dark",
+                            "symbol": "NASDAQ:AAPL",
+                            "locale": "en"
+                        }
+                    </script>
+                </div>
+                <!-- TradingView Widget END -->
+            </div>
+        </section>
+    <!-- More Details Section -->
+    <section class="more-details-section mb-5">
+        <div class="container">
+            <div class="mx-auto text-center" id="predictionButtons" style="display: none;">
+                <button class="btn btn-sm btn-outline-primary">1m</button>
+                <button class="btn btn-sm btn-outline-primary">3m</button>
+                <button class="btn btn-sm btn-outline-primary">6m</button>
+                <button class="btn btn-sm btn-outline-primary">1y</button>
+            </div>
+            <button class="btn btn-primary mb-5 d-block mx-auto" style="margin-top: 30px; height:40px; width:170px;" id="predictBtn">
+                <a href="{% url 'Home:predict_graph' %}" style="color: white; text-decoration: none;">Predict</a>
+            </button> 
+        </div>
+    </section>
+      <!-- Back Button -->
+      <div class="container mt-4">
+        <a href="{% url 'Home:market' %}" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back to Market</a>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- ... (HTML code remains unchanged) ... -->
+
+    <script>
+        async function fetchStockData(symbol) {
+            const apiKey = '3L4IET2PBT2JJYZ7';
+            const apiUrl = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${apiKey}`;
+
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                if (data['Global Quote']) {
+                    return data['Global Quote'];
+                } else {
+                    throw new Error('Stock data not available');
+                }
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                return null;
+            }
+        }
+
+        async function updateUI(symbol) {
+            const stockData = await fetchStockData(symbol);
+
+            if (stockData) {
+                document.getElementById('volumeValue').textContent = stockData['06. volume'];
+                document.getElementById('adjCloseValue').textContent = stockData['05. price'];
+                document.getElementById('todayLowValue').textContent = stockData['04. low'];
+                document.getElementById('todayHighValue').textContent = stockData['03. high'];
+            }
+        }
+
+        document.getElementById('card1').addEventListener('click', function () {
+            updateUI('TATAMOTORS');
+        });
+
+        document.getElementById('card2').addEventListener('click', function () {
+            updateUI('AAPL');
+        });
+
+        document.getElementById('card3').addEventListener('click', function () {
+            updateUI('TSLA');
+        });
+
+        document.getElementById('card4').addEventListener('click', function () {
+            updateUI('IBM');
+        });
+
+        document.getElementById('card5').addEventListener('click', function () {
+            updateUI('TCS');
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(function (card) {
+                card.addEventListener('click', function () {
+                    const symbol = card.getAttribute('data-symbol');
+                    console.log(`Clicked card with symbol: ${symbol}`);  // Debugging statement
+                    window.location.href = `/live_graph?symbol=${symbol}`;  // Remove the trailing slash
+                });
+            });
+        });
+
+       
+        document.getElementById("predictBtn").addEventListener("click", function () {
+        window.location.href = "{% url 'Home:predict_graph' %}";
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+*{
+    font-family: sans-serif;
+
+
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.navbar-brand .text-success,
+.navbar-brand .text-danger {
+    margin: 0;
+    padding: 0;
+}
+/* herooooo */
+.bg-light{
+    padding-top: 80px;
+    
+}
+.bg-light h1{
+    font-weight: bolder;
+    
+}
+/* FontAwesome Icons */
+.fa-chart-line, .fa-lightbulb, .fa-users {
+    margin-right: 10px;
+    color: #007bff;  /* Blue color */
+}
+
+/* Bullet Point Styling */
+.lead {
+    position: relative;
+    padding-left: 30px;
+    font-size: 22px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.lead > span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 28px;
+    line-height: 1;
+    color: #007bff;  /* Blue color */
+    transform: translateY(-50%);
+}
+
+/* Hover Effect */
+.lead:hover {
+    transform: scale(1.05);
+}
+
+/* Transitions */
+.lead > span, .lead > .fas {
+    transition: all 0.3s ease-in-out;
+}
+
+
+.img-fluid{
+    width: 170%;
+    height: 100%;
+    padding-left: 10px;
+    /* padding-top: 10px; */
+}
+.row h1{
+    padding-bottom: 40px;
+    
+}
+.lead{
+    font-family: sans-serif;
+    
+}
+
+/* what we dooooo */
+.service .text-center{
+    font-weight: bold;
+    
+}
+.container{
+    padding-top: 10px;
+}
+.service{
+    padding:30px;
+}
+.service-box:hover{
+    padding:30px;
+    background-color: rgb(164, 235, 255);
+    color: black;
+
+}
+.service .row > div{
+    transition: all 0.3 ease;
+    padding-top: 20px;
+}
+
+/* footerrrrr */
+.link li{
+    display: inline-block;
+    margin-right: 10px;
+    padding-top: 15px;
+    font-size: x-large;
+}
+.container .row h5{
+    text-decoration: underline;
+}
+/* FontAwesome Icons */
+.fa-play-circle {
+    margin-right: 10px;
+}
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    font-weight: 200;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: all 0.4s ease-in-out;
+}
+
+/* Shadow Effect */
+.shadow {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Animate Button */
+.animated {
+    animation-duration: 3s;
+}
+
+.pulse {
+    animation-name:pulse;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

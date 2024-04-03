@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <style>
+        * {
+            font-family: sans-serif;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sign_form {
+            display: flex;
+            background-size: cover;
+            height: 100vh;
+            width: 100vw;
+            justify-content: center;
+            align-items: center;
+            background-image: url("https://static.vecteezy.com/system/resources/previews/024/813/386/original/stock-market-growth-in-futuristic-technology-style-successful-financial-graphic-on-blue-background-business-growth-illustration-with-the-bar-chart-static-and-up-arrow-vector.jpg");
+        }
+
+        .sign_det {
+            display: flex;
+            padding-top: 50px;
+            flex-direction: column;
+            margin-left: auto;
+            margin-right: auto;
+            width: 30%;
+            justify-content: center;
+            align-items: center;
+            height: 70%;
+            margin-top: 40px;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(153, 153, 152, 0.5));
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .sign_det h1 {
+            padding-bottom: 40px;
+        }
+
+        .sign_det input {
+            border-radius: 9px;
+            border-width: 3px;
+            border-color: rgb(38, 32, 32);
+            height: 45px;
+            width: 320px;
+            margin-top: 15px;
+        }
+
+        .sign_det .name input {
+            width: 160px;
+        }
+
+        .sign_det button {
+            margin-top: 20px;
+            border-radius: 14px;
+            height: 45px;
+            width: 100px;
+            background: #2d5eda;
+            border-width: 3px;
+            color: aliceblue;
+            font-weight: bolder;
+        }
+
+        .sign_det button:hover {
+            background-color: rgb(23, 84, 158);
+            color: azure;
+        }
+
+        .sign_det button:active {
+            transform: translateZ(2px);
+        }
+
+        .sign_det h5 {
+            margin: 15px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <form method="post" >
+        {% csrf_token %}
+        <div class="sign_form">
+            <div class="sign_det">
+                <h1>Signup</h1>
+                <div class="name">
+                    <input type="text" placeholder="First name" id="fname" name="first_name" required>
+                    <input type="text" placeholder="Last name" id="lname" name="last_name" required>
+                </div>
+                <input type="text" placeholder="Email" id="email" name="email" required>
+                <input type="password" placeholder="Password" id="pass" name="password" required>
+                <input type="password" placeholder="Confirm Password" id="cpass" name="confirm_password" required>
+                <button type="submit">Signup</button>
+                <h5>Already have an account?<a href="{% url 'Home:login' %}">Login</a></h5>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,222 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market</title>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        
+        .scrolling-wrapper {
+            overflow-x: scroll;
+            overflow-y: hidden;
+            white-space: nowrap;
+            }
+        
+        .card {
+            display: inline-block;
+            width: 250px; /* Adjust the width of each card */
+            height: 350px; /* Adjust the height of each card */
+            transition: transform 0.9s ease; 
+            margin-right: 13px;
+            border-width:4px; /* Adjust margin between cards */
+        }
+        .card img {
+            height: 200px; /* Adjust the height of the image */
+            object-fit: cover; /* Preserve aspect ratio while filling the element */
+        }
+        .card:hover {
+            transform: scale(1.05); /* Increase size on hover */
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+        }
+        .stock-price {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+            text-align: center;
+        }
+        
+        /* Sidebar styling */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        #main {
+            transition: margin-right .5s;
+            padding: 16px;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5 ">
+        <img src="{% static 'images/logo1.jpg' %}" alt="Logo" style="width: 70px; height: 70px; margin-right: -5px;">
+        <span class="text-success  font-weight-bold ml-2" style="font-size: 24px;">Sto</span><span class="text-danger  font-weight-bold" style="font-size: 24px;">XX</span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item mr-3">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </div>
+                        <select id="choiceBox" class="form-control">
+                            <option value="all">Search</option>
+                            <option value="TATAMOTORS">Tata Motors</option>
+                            <option value="AAPL">Apple</option>
+                            <option value="TSLA">Tesla</option>
+                            <option value="IBM">IBM</option>
+                            <option value="TCS">TCS</option>
+                        </select>
+                    </div>
+                </li>
+                <button id="exploreBtn" class="btn btn-primary ml-3">My Profile</button>
+            </ul>
+        </div>
+    </nav>
+        <!-- Sidebar -->
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <a href="{% url 'Home:profile' %}">Profile</a>
+            <a id="logoutBtn" href="{% url 'Home:login' %}">Logout</a>
+        </div>
+            
+<div id="main">
+    <div class="container ">
+        <div class="row">
+            <div class="col">
+                <div id="card-container" class="scrolling-wrapper">
+                    <!-- Card 1 -->
+                    <div class="card" data-symbol="TATAMOTORS" id="card1">
+                        <img src="https://static.brandirectory.com/logos/tats001_tata.jpg"class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text text-center font-weight-bold mt-3">Tata Motors</p>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="card" data-symbol="AAPL" id="card2">
+                        <img src="https://media.designrush.com/inspiration_images/134802/conversions/_1511456315_653_apple-mobile.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text text-center font-weight-bold mt-3">Apple</p>
+                        </div>
+                    </div>
+                    <!-- Repeat for more cards -->
+                    <!-- Card 3 -->
+                    <div class="card" data-symbol="TSLA" id="card3">
+                        <img src="https://media.designrush.com/inspirations/269904/conversions/1.Tesla-Logo-Design-preview.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text text-center font-weight-bold mt-3">Tesla</p>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="card" data-symbol="IBM" id="card4">
+                        <img src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/122015/untitled-1_84.png?itok=6yX4oOLu" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text text-center font-weight-bold mt-3">IBM</p>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="card" data-symbol="TCS" id="card5">
+                        <img src="https://www.siegelgale.com/app/uploads/2021/10/SGCOM_Blog_211018.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text text-center font-weight-bold mt-3">TCS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    <script>
+        // Function to fetch stock data
+        document.addEventListener('DOMContentLoaded', function () {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(function (card) {
+        card.addEventListener('click', function () {
+            const symbol = card.getAttribute('data-symbol');
+            console.log(`Clicked card with symbol: ${symbol}`);  
+            window.location.href = `/live_graph?symbol=${symbol}`;  
+        });
+    });
+});
+
+
+        // Sidebar functions
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginRight = "250px";
+    }
+    
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginRight= "0";
+    }
+    
+    // Event listener for explore button
+    document.getElementById("exploreBtn").addEventListener("click", function() {
+        openNav();
+    });
+
+    // Function to filter cards based on choice box selection
+    function filterCards() {
+        const selectedSymbol = document.getElementById('choiceBox').value;
+        const cards = document.querySelectorAll('.card');
+        
+        cards.forEach(card => {
+            const cardSymbol = card.getAttribute('data-symbol');
+            if (selectedSymbol === 'all' || selectedSymbol === cardSymbol) {
+                card.style.display = 'inline-block'; 
+            } else {
+                card.style.display = 'none'; 
+            }
+        });
+    }
+
+    // Event listener for choice box
+    document.getElementById('choiceBox').addEventListener('change', filterCards);
+    filterCards();
+    </script>
+    
+    
+</body>
+</html>

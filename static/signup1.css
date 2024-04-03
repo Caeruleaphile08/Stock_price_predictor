@@ -1,0 +1,81 @@
+*{
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.sign_form{
+    display: flex;
+    
+    background-size: cover;
+    height:100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    /* background-color: blueviolet; */
+    background-image: url("https://static.vecteezy.com/system/resources/previews/024/813/386/original/stock-market-growth-in-futuristic-technology-style-successful-financial-graphic-on-blue-background-business-growth-illustration-with-the-bar-chart-static-and-up-arrow-vector.jpg");
+}
+.sign_det {
+    display: flex;
+    padding-top: 50px;
+    flex-direction: column;
+    margin-left: auto; /* Set left margin to auto */
+    margin-right: auto;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    margin-top: 40px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2); /* 50% transparency */
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(153, 153, 152, 0.5)); /* Gradient with transparency */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8); /* Box shadow with transparency */
+}
+
+.sign_det h1{
+    padding-bottom: 40px; 
+   
+}
+.sign_det input{
+    border-radius: 9px;
+    border-width: 3px;
+    border-color: rgb(38, 32, 32); 
+    height: 45px;
+    width:320px;
+    margin-top: 15px;
+}
+.sign_det .name input{
+    width:160px;
+
+}
+.sign_det button{
+    margin-top: 20px;
+    border-radius: 14px;
+    height:45px;
+    width:100px;
+    background: #2d5eda;
+    border-width:3px;
+    color: aliceblue;
+    font-weight: bolder;
+    
+}
+.sign_det button:hover{
+    background-color:rgb(23, 84, 158);
+    
+    color: azure;
+}
+.sign_det button:active
+{
+    
+    transform: translateZ(2px);
+    
+}
+.sign_det h5{
+    margin:15px;
+}

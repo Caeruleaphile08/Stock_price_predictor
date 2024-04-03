@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        * {
+            font-family: sans-serif;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4; /* Light grey background */
+        }
+
+        .log_det h1 {
+            padding-bottom: 40px;
+        }
+
+        .icon {
+            padding: 10px;
+            font-size: 30px;
+            flex-direction: column;
+        }
+
+        .log_det input {
+            border-radius: 9px;
+            border-width: 3px;
+            border-color: rgb(50, 40, 43);
+            height: 45px;
+            width: 280px;
+            margin-top: 15px;
+            background-color: #e6e6e6; /* Slightly darker shade of grey */
+            padding: 10px; /* Added padding for better appearance */
+        }
+
+        .log_det a {
+            padding-top: 20px;
+        }
+
+        .log_form {
+            width: 500000vw;
+            height: 100vh;
+            background-color: #6e6f72;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .log_det {
+            display: flex;
+            padding-top: 36px;
+            flex-direction: column;
+            margin-left: 450px;
+            margin-right: 450px;
+            width: 38%;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            height: 70%;
+            border-radius: 20px;
+            background: #e2e0e0; /* Background color set to the same color as .log_form */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+            margin-top: 120px;
+        }
+
+        .log_det button {
+            margin-top: 20px;
+            border-radius: 14px;
+            height: 45px;
+            width: 100px;
+            background: #2d5eda;
+            border-width: 3px;
+            color: aliceblue;
+            font-weight: bolder;
+        }
+
+        .log_det button:hover {
+            background-color: rgb(23, 84, 158);
+            color: azure;
+        }
+
+        .log_det h5 {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="log_form">
+        <form method="post">
+          {% csrf_token %}
+            <div class="log_det">
+                <h1>Login</h1>
+                <input type="text" placeholder="Email" id="email" name="email" required><br>
+                <input type="password" placeholder="Password" id="password" name="password" required><br>
+                <button type="submit">Login</button>
+                <!--<a href="#">Forgot passsword?</a><br>-->
+                <br>
+                <h5>Don't have an account?<a href="{% url 'Home:signup' %}">Signup</a></h5>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

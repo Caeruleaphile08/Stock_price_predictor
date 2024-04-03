@@ -1,0 +1,393 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>stoxx-stock prediction</title>
+    <meta name="description" content="Building Your First Bootstrap Template by Buddy">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'land_page1.css' %}">
+    <style>
+        .scrolling-wrapper {
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+            display: flex;
+            justify-content: flex-start;
+            gap: 10px;
+        }
+
+        .card {
+            flex: 0 0 auto;
+            width: 250px;
+            height: 320px;
+            margin-right: 10px;
+            transition: transform 0.9s ease;
+            border-width: 9px;
+        }
+
+        .card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card:hover {
+            transform: scale(1.20);
+            box-shadow: 0 0 30px rgba(0, 200, 255, 0.796);
+        }
+        .navbar-nav .nav-link {
+        font-size: 20px; /* Adjust the font size as per your requirement */
+    }
+                    
+    </style>
+
+</head>
+
+<body>
+
+    <!-- JSSS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+    <!--naviiii  -->
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top shadow-sm bg-white "><a href="land_page.html"
+            class="navbar-brand">
+            <img src="{% static 'images/logo1.jpg' %}" alt="Logo" style="width: 70px; height: 50px; margin-right: -5px; ">
+            <span class="text-success  font-weight-bold ml-2">Sto</span><span
+                class="text-danger  font-weight-bold ">XX</span></a>
+        <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span
+                class="navbar-toggler-icon"></span></button>
+        <div id="navbarSupportedContent" class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto ">
+                <li class="nav-item mr-5"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item mr-5"><a href="#about" class="nav-link">About</a></li>
+                <!--<li class="nav-item mr-5"><a href="{% url 'Home:market' %}" class="nav-link">Market</a></li>-->
+                <li class="nav-item mr-5 "><a href="#markets" class="nav-link">Top Companies</a></li>
+                <li class="nav-item mr-5 "><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="navbar-text ml-lg-3">
+                <a href="{% url 'Home:login' %}" class="btn btn-primary text-white shadow ">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- herooooo -->
+    <section id="home" class="bg-light ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 order-2 order-lg-1">
+                    <h1>Stock Forecast</h1>
+
+    <p class="lead">
+        <i class="fas fa-chart-line"></i> 
+        Experience the future of investment with our advanced AI and ML-powered algorithms, delivering precise forecasts and actionable recommendations.
+    </p>
+
+    <p class="lead">
+        <i class="fas fa-lightbulb"></i> 
+        Elevate your investment strategy with our cutting-edge stock price prediction platform
+    </p>
+
+    <p class="lead">
+        <i class="fas fa-users"></i> 
+        Join us today and revolutionize your trading experience. Make informed decisions with confidence.
+    </p><br><br>
+    <p>
+        <a href="{% url 'Home:signup' %}" class="btn btn-primary shadow mr-2 animated pulse">
+            <i class="fas fa-play-circle"></i> <!-- FontAwesome Play Circle Icon -->
+            Get Started
+        </a>
+    </p>
+                            <!-- <a href="#" class="btn btn-outline-primary">An extra button</a></p> -->
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2"><img src="{% static 'images/c5ef7d05-b0b7-4041-b006-e1eb45b4948d.jpeg' %}" alt="landing image" class="img-fluid"></div>
+            </div>
+        </div>
+    </section>
+
+<!-- Serviceesss wee providee-->
+
+<section id="about">
+    <div class="service">
+        <h1 class="text-center mt-5">Services We Provide</h1>
+        <p class="text-muted mb-5 text-center">We leverage AI and ML to provide accurate stock predictions.</p>
+        <div class="row">
+            <div class="col-sm-6 col-lg-4 mb-3">
+                <div class="service-box shadow p-3 mb-5 bg-white rounded">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h5>Accurate Predictions</h5>
+                    <p class="text-muted">Utilizing advanced machine learning algorithms, we provide precise forecasts for various stocks  trends.</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 mb-3">
+                <div class="service-box shadow p-3 mb-5 bg-white rounded">
+                    <i class="fa-solid fa-tower-cell"></i>
+                    <h5>Real-Time Updates</h5>
+                    <p class="text-muted">Stay informed with timely updates and insights on market changes, ensuring you're always ahead of the curve.</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 mb-3">
+                <div class="service-box shadow p-3 mb-5 bg-white rounded">
+                    <i class="fa-solid fa-gear"></i>
+                    <h5>Customizable Alerts</h5>
+                    <p class="text-muted">Set personalized alerts for specific stocks or market conditions, so you never miss out on key opportunities.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-lg-4 mb-3">
+                <div class="service-box shadow p-3 mb-3 bg-white rounded">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h5>Risk Management Tools</h5>
+                    <p class="text-muted">Gain access to management tools for informed investment decisions and portfolio protection.</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 mb-3">
+                <div class="service-box shadow p-3 mb-3 bg-white rounded">
+                    <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    <h5>Performance Tracking</h5>
+                    <p class="text-muted">Track investment performance, evaluate prediction accuracy, and optimize trading strategies over time.</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 mb-3">
+                <div class="service-box shadow p-3 mb-3 bg-white rounded">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <h5>Responsive Customer Support</h5>
+                    <p class="text-muted">Count on our dedicated support team for a seamless, hassle-free experience, guiding you at every step.</p>
+                </div>
+            </div>
+        </div> 
+    </div>
+</section>
+<br>
+<br>
+
+
+<!-- Company Section -->
+<div class="container " id="markets">
+    <h2 class=" text-center font-weight:bold mb-5"style="font-size: 3em;">Top Companies</h2>
+    <div class="row">
+        <div class="col">
+            <div id="card-container" class="scrolling-wrapper">
+                <!-- Card 1 -->
+                <div class="card" data-symbol="TATA">
+                    <img src="https://static.brandirectory.com/logos/tats001_tata.jpg">
+                    <div class="card-body">
+                        <p class="card-text  text-center font-weight-bold mt-3">Tata Motors</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="card" data-symbol="AAPL">
+                    <img src="https://media.designrush.com/inspiration_images/134802/conversions/_1511456315_653_apple-mobile.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text  text-center font-weight-bold mt-3">Apple</p>
+                    </div>
+                </div>
+                <!-- Repeat for more cards -->
+                <!-- Card 3 -->
+                <div class="card" data-symbol="TSLA">
+                    <img src="https://media.designrush.com/inspirations/269904/conversions/1.Tesla-Logo-Design-preview.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text   text-center font-weight-bold mt-3">Tesla</p>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="card" data-symbol="IBM">
+                    <img src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/122015/untitled-1_84.png?itok=6yX4oOLu" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text  text-center font-weight-bold mt-3">IBM</p>
+                    </div>
+                </div>
+                <!-- Repeat for more cards -->
+                <!-- Card 5 -->
+                <div class="card">
+                    <img src="https://www.siegelgale.com/app/uploads/2021/10/SGCOM_Blog_211018.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text  text-center font-weight-bold mt-3">TCS</p>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="card">
+                    <img src="https://cdn0.iconfinder.com/data/icons/most-usable-logos/120/Amazon-512.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text  text-center font-weight-bold mt-3">Amazon</p>
+                    </div>
+                </div>
+                <!-- Repeat for more cards -->
+                <!-- Card 7 -->
+                <div class="card">
+                    <img src="https://images.5paisa.com/MarketIcons/ADANIPOWER.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text  text-center font-weight-bold mt-3">Adani Power</p>
+                    </div>
+                </div>
+                <!-- Card 8 -->
+                <div class="card">
+                    <img src="https://s3-symbol-logo.tradingview.com/infosys--600.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text  text-center font-weight-bold mt-3">Infosys</p>
+                    </div>
+                </div>
+                <!-- Repeat for more cards -->
+                <!-- Card 9 -->
+                <div class="card">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Logo_of_Titan_Company%2C_May_2018.svg/1200px-Logo_of_Titan_Company%2C_May_2018.svg.png" alt="...">
+                    <div class="card-body">
+                        <p class="card-text  text-center font-weight-bold mt-3">Titan</p>
+                    </div>
+                </div>
+                <!-- Card 10 -->
+                <div class="card">
+                    <img src="https://m.economictimes.com/thumb/msid-107066155,width-600,resizemode-4/state-bank-of-india-share-price-live-updates-23-jan-2024.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text  text-center font-weight-bold mt-3">SBI</p>
+                    </div>
+                </div>
+                <!-- Repeat for more cards -->
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<script>// Get all cards and add event listeners
+    const cardContainer = document.getElementById('card-container');
+    cardContainer.addEventListener('click', handleCardClick);
+    cardContainer.addEventListener('mouseover', handleCardHover);
+    cardContainer.addEventListener('mouseout', handleCardHoverOut);
+    
+    function handleCardClick(event) {
+        if (event.target.tagName === 'DIV' && event.target.classList.contains('card')) {
+            const symbol = event.target.getAttribute('data-symbol');
+            fetchData(symbol);
+        }
+    }
+    
+    function handleCardHover(event) {
+        if (event.target.tagName === 'DIV' && event.target.classList.contains('card')) {
+            event.target.style.transform = 'scale(1.05)';
+            event.target.style.transition = 'transform 0.2s ease-in-out';
+        }
+    }
+    
+    function handleCardHoverOut(event) {
+        if (event.target.tagName === 'DIV' && event.target.classList.contains('card')) {
+            event.target.style.transform = 'scale(1)';
+            event.target.style.transition = 'transform 0.2s ease-in-out';
+        }
+    }</script>
+
+<!-- JavaScript for Show Next and Prev functionality -->
+<script>
+    document.getElementById('showNextBtn').addEventListener('click', function() {
+        var companyRow = document.getElementById('companyRow');
+        var companies = companyRow.getElementsByClassName('company-card');
+        var visibleCount = 0;
+        // Count the visible companies
+        for (var i = 0; i < companies.length; i++) {
+            if (window.getComputedStyle(companies[i]).display !== 'none') {
+                visibleCount++;
+            }
+        }
+        // Slide the next set of four companies
+        for (var i = visibleCount; i < visibleCount + 4; i++) {
+            if (companies[i]) {
+                companies[i].classList.remove('d-none');
+            }
+        }
+    });
+
+    document.getElementById('showPrevBtn').addEventListener('click', function() {
+        var companyRow = document.getElementById('companyRow');
+        var companies = companyRow.getElementsByClassName('company-card');
+        var visibleCount = 0;
+        // Count the visible companies
+        for (var i = 0; i < companies.length; i++) {
+            if (window.getComputedStyle(companies[i]).display !== 'none') {
+                visibleCount++;
+            }
+        }
+        // Hide the last visible set of four companies
+        for (var i = visibleCount - 1; i >= visibleCount - 4; i--) {
+            if (companies[i]) {
+                companies[i].classList.add('d-none');
+            }
+        }
+    });
+</script>
+
+
+<!-- Visualization Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center font-weight-bold mt-3 mb-5"   >AI Generated Stock Graphs</h2>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <img src="{% static 'images/lstm_sample.png' %}" class="img-fluid rounded"  alt="Visualization 1">
+            </div>
+            <div class="col-md-6 mb-4">
+                <img src="{% static 'images/apple_sample.png' %}" class="img-fluid rounded" alt="Visualization 2">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- footerrrrr -->
+<div id='contact' class="py-5 bg-light text-center mt-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4 mb-lg-0 ">
+            <h5>Stoxx 101</h5>
+                <ul class="contact-info list-unstyled">
+                    <li><a href="#" class="text-dark">stoxx@invest.works</a></li>
+                    <li><a href="#" class="text-dark">+91 987625431</a></li>
+                </ul>
+            
+            </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>Our Guidelines</h5>
+                <ul class="links list-unstyled">
+                    <li> <a href="#" class="text-muted">Terms</a></li>
+                    <li> <a href="#" class="text-muted">Privacy Policy</a></li>
+                    <li> <a href="#" class="text-muted">Discover</a></li>
+                </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h5>Our Address</h5>
+            <i class="fa-solid fa-location-dot"></i> 123 xx street xx city
+                <ul class="link list-unstyled ">
+                    
+                    <li> <a href="#" class="fa-brands fa-instagram"></a></li>
+                    <li> <a href="#" class="fa-brands fa-facebook"></a></li>
+                    <li> <a href="#" class="fa-brands fa-twitter"></a></li>
+                </ul>
+        </div>
+    </div>
+</div>
+</div>
+<div class="py-5 bg-dark text-white">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-7 text-center text-md-left">
+            <p class="mb-md-0">© All rights reserved-2024. Stoxx </p>
+        </div>
+        <div class="col-md-5 text-center text-md-right">
+            <p class="mb-0"> # </p>
+        </div>
+    </div>
+</div>
+</div>
+    </body>
+</html>
+
+    
